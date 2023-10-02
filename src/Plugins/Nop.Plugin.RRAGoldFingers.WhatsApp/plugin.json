@@ -1,0 +1,11 @@
+﻿{
+  "Group": "RRAGoldFingers",
+  "FriendlyName": "WhatsApp",
+  "SystemName": "RRAGoldFingers.WhatsApp",
+  "Version": "1.0.0",
+  "SupportedVersions": [ "4.70" ],
+  "Author": "RRAGoldFingers",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.RRAGoldFingers.WhatsApp.dll",
+  "Description": "WhatsApp integration"
+}
