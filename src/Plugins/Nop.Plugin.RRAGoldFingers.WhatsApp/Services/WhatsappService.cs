@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Nop.Plugin.RRAGoldFingers.WhatsApp.Models;
 using Nop.Plugin.RRAGoldFingers.WhatsApp.Services;
 
 namespace Nop.Plugin.Misc.Zettle.Services
@@ -15,9 +16,9 @@ namespace Nop.Plugin.Misc.Zettle.Services
             _whatsappHttpClient = whatsappHttpClient;
         }
 
-        public async Task PostReply(object request)
+        public async Task SendMessage(ChatMessage msg)
         {
-            await _whatsappHttpClient.Post(request);
+            await _whatsappHttpClient.Post(msg);
         }
     }
 }

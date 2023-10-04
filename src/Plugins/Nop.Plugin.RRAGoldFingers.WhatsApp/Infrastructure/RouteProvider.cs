@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
-using Nop.Web.Framework;
 using Nop.Web.Framework.Mvc.Routing;
 
 namespace Nop.Plugin.RRAGoldFingers.WhatsApp.Infrastructure;
@@ -16,9 +15,9 @@ public class RouteProvider : IRouteProvider
     /// <param name="endpointRouteBuilder">Route builder</param>
     public void RegisterRoutes(IEndpointRouteBuilder endpointRouteBuilder)
     {
-        endpointRouteBuilder.MapControllerRoute(name: "Plugin.RRAGoldFingers.WhatsApp.Webhook",
-                pattern: "whatsapp/webhook",
-                defaults: new { controller = "WhatsappWebhook", action = "Webhook" });
+        endpointRouteBuilder.MapControllerRoute(name: "Plugin.RRAGoldFingers.WhatsApp.Search",
+               pattern: "whatsapp/search",
+               defaults: new { controller = "WhatsappWebhook", action = "Search" });
     }
 
     /// <summary>
