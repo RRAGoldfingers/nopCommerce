@@ -31,7 +31,9 @@ public class WhatsappAdminController : BasePluginController
         if (!await _permissionService.AuthorizeAsync(StandardPermissionProvider.ManagePlugins))
             return AccessDeniedView();
 
-        return View("~/Plugins/RRAGoldFingers.WhatsApp/Views/Configure.cshtml");
+        var settings = await _settingService.LoadSettingAsync<WhatsappSettings>();
+
+        return View("~/Plugins/RRAGoldFingers.WhatsApp/Views/Configure.cshtml", settings);
     }
 
     [HttpPost]
@@ -39,6 +41,6 @@ public class WhatsappAdminController : BasePluginController
     {
         await _settingService.SaveSettingAsync(model);
 
-        return new NullJsonResult();
+        return await Configure();
     }
 }
